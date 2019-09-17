@@ -10,6 +10,7 @@ class User extends Model {
   static boot () {
     super.boot()
 
+
     /**
      * A hook to hash the user password before saving
      * it to the database.
@@ -20,6 +21,10 @@ class User extends Model {
       }
     })
   }
+  properties () {
+    return this.hasMany('App/Models/Property')
+  }
+
 
   /**
    * A relationship on tokens is required for auth to
